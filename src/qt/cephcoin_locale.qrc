@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/cephcoin_bg.qm</file>
+        <file alias="de">locale/cephcoin_de.qm</file>
+        <file alias="en">locale/cephcoin_en.qm</file>
+        <file alias="es">locale/cephcoin_es.qm</file>
+        <file alias="fi">locale/cephcoin_fi.qm</file>
+        <file alias="fr">locale/cephcoin_fr.qm</file>
+        <file alias="it">locale/cephcoin_it.qm</file>
+        <file alias="ja">locale/cephcoin_ja.qm</file>
+        <file alias="pl">locale/cephcoin_pl.qm</file>
+        <file alias="pt">locale/cephcoin_pt.qm</file>
+        <file alias="ru">locale/cephcoin_ru.qm</file>
+        <file alias="sk">locale/cephcoin_sk.qm</file>
+        <file alias="sv">locale/cephcoin_sv.qm</file>
+        <file alias="vi">locale/cephcoin_vi.qm</file>
+        <file alias="zh_CN">locale/cephcoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/cephcoin_zh_TW.qm</file>
+    </qresource>
+</RCC>

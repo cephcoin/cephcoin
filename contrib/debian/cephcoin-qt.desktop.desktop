@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CephCoin
+Comment=CephCoin P2P Cryptocurrency
+Exec=cephcoin-qt %u
+Terminal=false
+Type=Application
+Icon=cephcoin128
+MimeType=x-scheme-handler/cephcoin;
+Categories=Office;Finance;
+Name[en_US]=cephcoin-qt.desktop

@@ -1,0 +1,3 @@
+debian/manpages/cephcoind.1
+debian/manpages/cephcoin.conf.5
+debian/manpages/cephcoin-cli.1

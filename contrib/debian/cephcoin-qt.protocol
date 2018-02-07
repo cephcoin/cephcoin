@@ -1,0 +1,11 @@
+[Protocol]
+exec=cephcoin-qt '%u'
+protocol=cephcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

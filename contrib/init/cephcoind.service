@@ -1,0 +1,22 @@
+[Unit]
+Description=CephCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=cephcoincore
+Group=cephcoincore
+
+Type=forking
+PIDFile=/var/lib/cephcoind/cephcoind.pid
+ExecStart=/usr/bin/cephcoind -daemon -pid=/var/lib/cephcoind/cephcoind.pid \
+-conf=/etc/cephcoincore/cephcoin.conf -datadir=/var/lib/cephcoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  cephcoind The CephCoin Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: cephcoind
+# processname: cephcoind
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/cephcoind, see below
+if [ -f /etc/sysconfig/cephcoind ]; then
+        . /etc/sysconfig/cephcoind
+fi
+
+RETVAL=0
+
+prog=cephcoind
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/cephcoind
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/cephcoind}
+
+# cephcoind defaults to /usr/bin/cephcoind, override with BITCOIND_BIN
+cephcoind=${BITCOIND_BIN-/usr/bin/cephcoind}
+
+# cephcoind opts default to -disablewallet, override with BITCOIND_OPTS
+cephcoind_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $cephcoind $cephcoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

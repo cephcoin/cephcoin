@@ -1,0 +1,2 @@
+usr/local/bin/cephcoind usr/bin
+usr/local/bin/cephcoin-cli usr/bin
